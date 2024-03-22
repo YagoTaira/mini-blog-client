@@ -19,7 +19,7 @@ function Registration() {
     const onSubmit = (data) => {
         axios.post("https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/auth", data).then(() => {
             console.log(data);
-            navigate("/");
+            navigate("/login");
         })
     };
     

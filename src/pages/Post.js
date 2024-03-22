@@ -13,7 +13,7 @@ function Post() {
     let navigate = useNavigate();
 
     useEffect (() => {
-        axios.get(`hhttps://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/byId/${id}`).then((response) => {
+        axios.get(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/byId/${id}`).then((response) => {
             setPostObject(response.data);
         });
 
