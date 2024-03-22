@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function ChangePassword() {
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
+
+    let navigate = useNavigate();
 
     const changePassword = () => {
         axios.put(
