@@ -13,11 +13,11 @@ function Post() {
     let navigate = useNavigate();
 
     useEffect (() => {
-        axios.get(`http://localhost:5000/posts/byId/${id}`).then((response) => {
+        axios.get(`hhttps://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/byId/${id}`).then((response) => {
             setPostObject(response.data);
         });
 
-        axios.get(`http://localhost:5000/comments/${id}`).then((response) => {
+        axios.get(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/comments/${id}`).then((response) => {
             setComments(response.data);
         });
     }, []);
@@ -25,7 +25,7 @@ function Post() {
     const addComment = () => {
         axios
             .post(
-                "http://localhost:5000/comments", 
+                "https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/comments", 
                 {
                     commentBody: newComment, 
                     postId: id,
@@ -52,7 +52,7 @@ function Post() {
     };
 
     const deleteComment = (id) => {
-        axios.delete(`http://localhost:5000/comments/${id}`, { 
+        axios.delete(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/comments/${id}`, { 
             headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then(() => {
@@ -65,7 +65,7 @@ function Post() {
     };
 
     const deletePost = (id) => {
-        axios.delete(`http://localhost:5000/posts/${id}`, { 
+        axios.delete(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/${id}`, { 
             headers: { accessToken: localStorage.getItem('accessToken') },
         })
         .then(() => {
@@ -77,7 +77,7 @@ function Post() {
         if (option === "title") {
             let newTitle = prompt("Enter new title:");
             axios.put(
-                "http://localhost:5000/posts/title", 
+                "https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/title", 
                 {
                     newTitle: newTitle, 
                     id: id
@@ -90,7 +90,7 @@ function Post() {
         } else {
             let newPostText = prompt("Enter new post:");
             axios.put(
-                "http://localhost:5000/posts/postText", 
+                "https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/postText", 
                 {
                     newText: newPostText, 
                     id: id

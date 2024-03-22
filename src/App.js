@@ -20,7 +20,7 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/auth/auth', { headers: {
+    axios.get('https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/auth/auth', { headers: {
       accessToken: localStorage.getItem('accessToken'),
     }}).then((response) => {
       if (response.data.error) {

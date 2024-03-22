@@ -11,12 +11,12 @@ function Profile() {
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/auth/basicInfo/${id}`)
+    axios.get(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/auth/basicInfo/${id}`)
     .then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get(`http://localhost:5000/posts/byUserId/${id}`)
+    axios.get(`https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts/byUserId/${id}`)
     .then((response) => {
       setlistOfPosts(response.data);
     });

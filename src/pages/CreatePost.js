@@ -26,7 +26,7 @@ function CreatePost() {
     });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:5000/posts", data, { 
+        axios.post("https://full-stack-api-yagotaira-bc870caa5c53.herokuapp.com/posts", data, { 
             headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
